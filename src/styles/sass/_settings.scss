@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500');
+
+/************************  COLOR  ************************/
+$bodyColor:#eff0f4;
+$primary: rgb(196, 196, 196);
+$secondary: rgb(250, 190, 80);
+$tertiary: rgb(130, 130, 130);
+$nav: rgb(61, 61, 61);
+$textColor: black;
+
+/************************  FONTS  ************************/
+$font: 'Roboto', sans-serif;
+
+/************************  SPACING  ************************/
+$spacing1: .2rem;
+$spacing2: .5rem;
+$spacing3: 1rem;
+$spacing4: 1.5rem;
+$spacing4: 2rem;
+
+/************************  MIXINS  ************************/
+@mixin alignCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin verticalCenter {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+@mixin button {
+   font-family: "Poppins", sans-serif;
+   text-transform: uppercase;
+   font-weight: 500;
+   font-size: 14px;
+   letter-spacing: 1px;
+   display: inline-block;
+   padding: 8px 28px;
+   border-radius: 50px;
+   transition: 0.5s;
+   margin: 10px;
+   border: 2px solid $secondary;
+   background: $secondary;
+   color: #fff !important;
+}
+
+@mixin buttonHover {
+   background: $tertiary;
+   border: 2px solid $tertiary;
+}
+
+body {
+   font-family: $font;
+   font-weight: 200;
+   color: $textColor;
+   background-color: $bodyColor;
+}
+
+.page-section {
+   margin: $spacing4 0;
+}

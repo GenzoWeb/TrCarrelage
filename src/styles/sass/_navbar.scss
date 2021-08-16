@@ -1,0 +1,87 @@
+.navbar {
+   background-color: $nav;
+   color: $primary;
+   font-size: 1.3rem;
+
+   .active {
+      color: $secondary;
+   }
+
+   li:hover a {
+      color: $secondary;
+   }
+}
+
+.navbar-brand {
+   color: $secondary !important;
+   font-weight: 300;
+
+   span {
+      font-size: 2rem;
+      vertical-align: middle;
+   }
+
+   &:hover {
+      transform: scale(0.95);
+   }
+}
+
+.navbar-toggler {
+   border-color: transparent !important;
+   padding: 0;
+   height: 14px;
+}
+
+.navbar-toggler-icon {
+   background-image: unset !important;
+}
+
+.header_icon {
+   content: '';
+   position: relative;
+   width: 25px;
+   height: 3px;
+   background-color: $primary;
+   display: block;
+   transition: .5s;
+   transition-property: top,bottom,transform;
+
+   &::before, &::after {
+       @extend .header_icon
+   }
+
+   &::before {
+       bottom: -8px;
+   }
+
+   &::after {
+       top: -11px;
+   }
+}
+
+.header_icon_anim {
+   transform: rotate(-135deg);
+   background-color: transparent;
+
+   &::before {
+      bottom: 0;
+      transform: rotate(-90deg);
+   }
+
+   &::after {
+      top: -3px;
+      transform: rotate(0);
+   }
+}
+
+.navbar-toggler:hover .header_icon {
+   background-color: $secondary;
+}
+
+.navbar-nav {
+   align-items: center;
+}
+
+.nav-link:focus {
+   color: $primary;
+}
