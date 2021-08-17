@@ -1,12 +1,17 @@
 import React from 'react';
 import Navbar from '../base/navigation/Navbar';
 import Footer from '../base/footer/Footer';
+import Welcome from '../home/Welcome';
+import AboutUs from '../home/AboutUs';
+import Example from '../home/Example';
 
 const Home = () => {
    return (
       <div>
          <Navbar />
-         <h1>Page d'Accueil</h1>
+         <Welcome />
+         <AboutUs />
+         <Example />
          <Footer />
       </div>
    );

@@ -1,0 +1,101 @@
+/**************** WELCOME ****************/
+#image-welcome {
+   width: 100%;
+   height: 90vh;
+   background: url("./../../images/welcome.jpg") center center;
+   background-size: cover;
+   position: relative;
+
+   .container {
+      color: $tertiary;
+   }
+
+   h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+   }
+
+   h2 {
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+   }
+
+   .btn-get-started {
+      @include button();
+   }
+
+   .btn-get-started:hover {
+      @include buttonHover();
+   }
+}
+
+@media (min-width: 1024px) {
+   #image-welcome {
+      background-attachment: fixed;
+   }
+}
+
+@media (max-width: 768px) {
+   #image-welcome {
+      height: 100vh;
+
+      .container {
+         padding-top: 60px;
+      }
+
+      h1 {
+         font-size: 32px;
+         line-height: 36px;
+      }
+   }
+}
+
+/**************** ABOUT US ****************/
+.about {
+   i {
+      font-size: 2rem;
+      color: $secondary;
+   }
+}
+
+.btn-xl {
+   padding: 1.25rem 2.25rem;
+   font-size: 0.85rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 10rem;
+}
+
+hr.divider {
+   height: $spacing1;
+   max-width: 4rem;
+   margin: $spacing3 auto;
+   background-color: $secondary;
+   opacity: 1;
+}
+
+/**************** Example ****************/
+.btn-example  {
+   @include button();
+}
+
+.btn-example:hover {
+   @include buttonHover();
+}
+
+.card-example {
+   max-width: 350px;
+   height: auto;
+   margin: 0 10px 20px;
+
+   img {
+      width: 100%;
+   }
+}
