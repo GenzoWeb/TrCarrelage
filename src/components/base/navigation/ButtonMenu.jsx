@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
-import Burger from './Burger';
+import React, { useRef } from 'react';
 
 function ButtonMenu({menuOpen}) {
-   const [menuShow, setMenuShow] = useState(false);
-   const [animateBurger, setAnimateBurger] = useState('#navbarSupportedContent');
-   
-   const test = function(){
-      setAnimateBurger("")
-      setTimeout(function(){
-         setAnimateBurger("#navbarSupportedContent")
-      }, 350);
+   const refBurgerAnim = useRef(null);
+   const refButtonBurger = useRef(null);
 
-      if(animateBurger === "#navbarSupportedContent"){
-         setMenuShow((s) => !s)
+   const test = function(){
+      if(!refButtonBurger.current.classList.contains("collapsed")){
+         refBurgerAnim.current.classList.add('header_icon_anim')
+      }else {
+         refBurgerAnim.current.classList.remove('header_icon_anim')
       }
-   }
+   };
 
    return (
-      <button id="burger-button" className="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target={animateBurger} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() =>{test()}}>
-         <Burger menuOpen={menuShow}></Burger>
+      <button ref={refButtonBurger} id="burger-button" className="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() =>{test()}}>
+         <span ref={refBurgerAnim} id ="burger" className="navbar-toggler-icon header_icon"></span>
       </button>
    );
 };

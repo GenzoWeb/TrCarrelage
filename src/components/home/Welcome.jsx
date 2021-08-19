@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
    return (
@@ -6,7 +7,7 @@ const Welcome = () => {
          <div className="container text-center position-relative" data-aos="zoom-in-down" data-aos-duration="1000">
             <h1>T.R Carrelage</h1>
             <h2>Carrelages, Faïences, Mosaïques...</h2>
-            <a href="/contact" className="btn-get-started">Me contacter</a>
+            <Link className="btn-get-started" to="/contact">Me contacter</Link>
          </div>
       </section>
    );

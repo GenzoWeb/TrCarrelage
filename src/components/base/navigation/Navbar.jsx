@@ -1,14 +1,14 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ButtonMenu from './ButtonMenu';
+import logo from '../../../images/logo.png';
 
 function Navbar() {
-
    return (
       <div>
          <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-               <a className="navbar-brand" href="/"><img src="/images/logo.png" alt="Logo T.R Carrelage" /><span>T.R Carrelage</span></a>
+               <a className="navbar-brand" href="/"><img src={logo} alt="Logo T.R Carrelage" /><span>T.R Carrelage</span></a>
                <ButtonMenu />
                <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
                   <ul className="navbar-nav mb-2 mb-lg-0">
