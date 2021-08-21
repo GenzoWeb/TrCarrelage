@@ -28,7 +28,7 @@ const Example = () => {
                </div>
             </div>
             <div className="text-center">
-               <Link className="btn-example" to="/Photos">En voir plus</Link>
+               <Link className="btn-base" to="/Photos">En voir plus</Link>
             </div>
          </div>
       </section>

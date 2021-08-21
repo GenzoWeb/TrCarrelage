@@ -82,11 +82,11 @@ hr.divider {
 }
 
 /**************** Example ****************/
-.btn-example  {
+.btn-base  {
    @include button();
 }
 
-.btn-example:hover {
+.btn-base:hover {
    @include buttonHover();
 }
 
