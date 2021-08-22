@@ -1,0 +1,25 @@
+.section-prestations {
+   .container {
+      max-width: 1000px;
+   }
+}
+
+.prestations-images {
+   max-width: 400px;
+   height: auto;
+}
+
+@media #{$small} {
+   .prestations-images {
+      margin: auto;
+   }
+
+   .prestations-text {
+      text-align: center;
+   }
+
+   .prestation {
+      display: flex;
+      flex-direction: column-reverse;
+   }
+}
