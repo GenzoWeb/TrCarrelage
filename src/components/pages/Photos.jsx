@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from '../base/navigation/Navbar';
 import Footer from '../base/footer/Footer';
+import Gallery from '../gallery/Gallery';
 
 const Photos = () => {
    return (
       <div>
          <Navbar />
-         <h1>Page Photos</h1>
+         <Gallery />
          <Footer />
       </div>
    );

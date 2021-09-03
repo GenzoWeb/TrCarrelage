@@ -23,7 +23,7 @@ const Footer = () => {
                      <ul className="footer-infos">
                         <li><span className="icon"><i className="fas fa-map-marker-alt"></i></span><span className="text">54770 Bouxières aux Chênes</span></li>
                         <li><span className="icon"><i className="fas fa-mobile-alt"></i></span><span className="text">06 71 21 83 80</span></li>
-                        <li><span className="icon"><i className="fas fa-envelope"></i></span><span className="text">remi.tissier84@gmail.com</span></li>
+                        <li><span className="icon"><i className="fas fa-envelope"></i></span><span className="text mail">remi.tissier84@gmail.com</span></li>
                         <li><a className="link-facebook" href="https://www.facebook.com/TR-Carrelage-104708727622378"><span className="icon"><i className="fab fa-facebook"></i></span><span className="text">facebook</span></a></li>
                      </ul>
                   </div>

@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import './styles/reset.css';
 import './styles/styles.scss';
 import 'aos/dist/aos.css';
+import 'react-medium-image-zoom/dist/styles.css';
 
 
 import 'bootstrap';

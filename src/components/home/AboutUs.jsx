@@ -6,7 +6,11 @@ const AboutUs = () => {
          <div className="container px-4 px-lg-5">
             <h2 className="text-center mt-0">À propos</h2>
             <hr className="divider" />
-            <div className="row gx-4 gx-lg-5" data-aos="fade-down" data-aos-duration="700" data-aos-once="true">
+            <div className="row gx-4 gx-lg-5"
+               data-aos="fade-down"
+               data-aos-duration="700"
+               data-aos-once="true"
+            >
                <div className="col-lg-3 col-md-6 text-center">
                   <div className="mt-5">
                         <div className="mb-2"><i className="far fa-clone"></i></div>

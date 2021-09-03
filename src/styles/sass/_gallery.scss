@@ -1,0 +1,59 @@
+.gallery-images {
+   min-height: 490px;
+}
+
+.page-item {
+   button {
+      border: 0;
+   }
+   margin: 0 1px;
+}
+
+.page-link {
+   background-color: $nav;
+   color: $secondary;
+
+   &:hover {
+      background-color: $tertiary;
+      color: $secondary;
+   }
+
+   &:focus {
+      background-color: $tertiary;
+      color: $secondary;
+      box-shadow: unset;
+   }
+}
+
+.page-item.active {
+   .page-link {
+      border-color: unset;
+      z-index: unset;
+      background-color: $tertiary;
+      color: $secondary;
+   }
+}
+
+.pagin-button {
+   background-color: $nav;
+   margin-left: -1px;
+   color: $secondary;
+   padding: 0.375rem 0.75rem;
+
+   &:focus {
+      background-color: $nav;
+      outline:0px;
+   }
+
+   &:hover {
+      background-color: $tertiary;
+   }
+}
+
+.pagin-button-block {
+   background-color: $nav;
+   margin-left: -1px;
+   color: $primary;
+   padding: 0.375rem 0.75rem;
+   cursor: unset !important;
+}

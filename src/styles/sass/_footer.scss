@@ -50,11 +50,15 @@
       display: table-cell;
    }
 
-   .icon{
+   .icon {
       width: 40px;
       font-size: 18px;
       padding-top: 2px;
       color: white;
+   }
+
+   .mail {
+      text-transform: lowercase;
    }
 }
 

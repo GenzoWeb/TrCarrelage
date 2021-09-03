@@ -13,7 +13,15 @@ function ButtonMenu({menuOpen}) {
    };
 
    return (
-      <button ref={refButtonBurger} id="burger-button" className="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() =>{toggleMenu()}}>
+      <button ref={refButtonBurger} id="burger-button" className="navbar-toggler shadow-none" 
+         type="button" 
+         data-bs-toggle="collapse" 
+         data-bs-target="#navbarSupportedContent" 
+         aria-controls="navbarSupportedContent" 
+         aria-expanded="false" 
+         aria-label="Toggle navigation" 
+         onClick={() =>{toggleMenu()}}
+      >
          <span ref={refBurgerAnim} id ="burger" className="navbar-toggler-icon header_icon"></span>
       </button>
    );
