@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import axios from "axios";
 
 const BlocForm = () => {
    const [name, setName] = useState("");
@@ -7,6 +8,11 @@ const BlocForm = () => {
    const [message, setMessage] = useState(""); 
    const [spanInput, setSpanInput] = useState(""); 
    const [changeEmail, setChangeEmail] = useState("");
+   const [sendEmail, setSendEmail] = useState("");
+   const [error, setError] = useState("");
+   const [send, setSend] = useState(false);
+
+   const urlApi = 'http://localhost:80/test/index.php';
 
    const refTextAfterSubmit = useRef(null);
    const refErrorEmail = useRef(null);
@@ -18,6 +24,8 @@ const BlocForm = () => {
    
    const handleSubmit = (e) => {
       e.preventDefault();
+      setSendEmail(false)
+      setError(false)
       const testInput = function(){
          const testInputName = validTrim(name);
          const testInputTitle = validTrim(title);
@@ -30,15 +38,33 @@ const BlocForm = () => {
             setSpanInput('error-form')
             return false;
          } else {
-            refTextAfterSubmit.current.innerText="Message OK"
-            refTextAfterSubmit.current.classList.add("form-message-success")
+            setSend(true)
+            axios({
+               method: 'post',
+               url: urlApi,
+               headers: { "content-type": "application/json" },
+               data: {
+                  name: name,
+                  email: email,
+                  title: title,
+                  message: message
+               }
+             })
+               .then(response => {
+                  if (response.data) {
+                     setSendEmail(response.data)
+                     setError(false)
+                  } else {
+                     setError(true)
+                  }
+               })
+               .catch(error => {
+                  setError(true)
+               });
             
             if(refTextAfterSubmit.current.classList.contains("form-message-error")){
                refTextAfterSubmit.current.classList.remove("form-message-error")
             }
-            setTimeout(() => {
-               refTextAfterSubmit.current.classList.remove("form-message-success")
-            }, 3000)
             return true;
          }
       }
@@ -87,10 +113,26 @@ const BlocForm = () => {
       setSpanInput('')
    }
 
+   if(sendEmail){
+      setSendEmail(false)
+      refTextAfterSubmit.current.innerText="Votre message a bien été envoyé"
+      refTextAfterSubmit.current.classList.add("form-message-success")
+      setTimeout(() => {
+         refTextAfterSubmit.current.classList.remove("form-message-success")
+         setSend(false)
+      }, 2000)
+   }
+   if(error){
+      setError(false)
+      setSend(false)
+      refTextAfterSubmit.current.innerText="Désolé une erreur s'est produite. Veuillez recommencer."
+      refTextAfterSubmit.current.classList.add("form-message-error")
+   }
+
    return (
       <div className="bloc-form">
          <h2>Envoyer un message</h2>
-         <form action="forms/contact.php" method="post">
+         <form action="" method="post">
             <div className="d-flex flex-wrap justify-content-between name-email">
                <div className="form-group">
                   <input
@@ -125,16 +167,16 @@ const BlocForm = () => {
             </div>
             <div className="form-group">
                <input
-                     type="text"
-                     id="title"
-                     className="form-input"
-                     name="title"
-                     onChange={(e) => setTitle(e.target.value)}
-                     value={title}
-                     autoComplete="off"
-                     required
-                  />
-                  <span className={spanInput}>Sujet du message *</span>
+                  type="text"
+                  id="title"
+                  className="form-input"
+                  name="title"
+                  onChange={(e) => setTitle(e.target.value)}
+                  value={title}
+                  autoComplete="off"
+                  required
+               />
+               <span className={spanInput}>Sujet du message *</span>
             </div>
             <div className="form-group contact-message">
                <textarea
@@ -152,7 +194,8 @@ const BlocForm = () => {
                   id="form-submit"
                   className="form-submit"
                   type="button"
-                  value="Envoyer"
+                  value={ send ? "Envoi ..." : "Envoyer"}
+                  disabled={ send ? true : false}
                   onClick={handleSubmit}
                />
             </div>

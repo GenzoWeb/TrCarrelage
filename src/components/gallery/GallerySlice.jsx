@@ -10,8 +10,8 @@ const GallerySlice = (props) => {
       >
          {props.imagesPagin
             .map(data =>                   
-               <div key={data.id}>
-                  <div className="card-example">
+               <div key={data.id} className="card-example" >
+                  <div className="image-gallery" >
                      <Zoom zoomMargin={40} overlayBgColorEnd='rgba(61, 61, 61, 0.95)' >
                         <img src={data.image} alt="photos d'exemple" width="100%" />
                      </Zoom>

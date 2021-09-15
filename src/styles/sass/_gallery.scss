@@ -1,5 +1,17 @@
 .gallery-images {
    min-height: 490px;
+
+   .card-example {
+      overflow: hidden;
+   }
+
+   .image-gallery {
+      transition: transform 0.4s;
+   }
+
+   .image-gallery:hover {
+      transform: scale(1.1);
+   }
 }
 
 .page-item {
